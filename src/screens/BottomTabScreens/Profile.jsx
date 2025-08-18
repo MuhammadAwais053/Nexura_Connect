@@ -1,26 +1,31 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { Image, StyleSheet, Text, View } from 'react-native';
+import React from 'react';
 
 const Profile = () => {
   return (
     <View style={styles.container}>
+      <Image style={styles.image} source={require('../assets/arnold.jpg')} />
       <Text style={styles.text}>Profile</Text>
     </View>
-  )
-}
+  );
+};
 
-export default Profile
+export default Profile;
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#111827',
     flex: 1,
-    alignItems:'center',
-    justifyContent:'center'
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  text:{
-    color:'white',
-    fontSize:35,
-    fontWeight:'heavy'
-  }
-})
+  text: {
+    color: 'white',
+    fontSize: 35,
+    fontWeight: 'heavy',
+  },
+  image: {
+    width: 150,
+    height: 150,
+  },
+});
