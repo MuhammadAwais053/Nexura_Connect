@@ -93,33 +93,33 @@ const dummyData = [
   },
 ];
 
-const Search = () => {
-  const Card = ({ person }) => (
-    <View style={styles.cardContainer}>
-      <View style={styles.topRow}>
-        <Text style={styles.jobTitle}>{person.title}</Text>
-        <Text style={styles.priceText}>{person.price}</Text>
-      </View>
-
-      <Text style={styles.companyName}>{person.company}</Text>
-
-      <View style={styles.tagsRow}>
-        {person.tags.map((tag, index) => (
-          <Text key={index} style={styles.tagItem}>
-            {tag}
-          </Text>
-        ))}
-      </View>
-
-      <View style={styles.descriptionRow}>
-        <Text style={styles.descriptionText}>{person.description}</Text>
-        <TouchableOpacity style={styles.applyButton}>
-          <Text style={styles.applyButtonText}>Apply</Text>
-        </TouchableOpacity>
-      </View>
+const Card = ({ person }) => (
+  <View style={styles.cardContainer}>
+    <View style={styles.topRow}>
+      <Text style={styles.jobTitle}>{person.title}</Text>
+      <Text style={styles.priceText}>{person.price}</Text>
     </View>
-  );
 
+    <Text style={styles.companyName}>{person.company}</Text>
+
+    <View style={styles.tagsRow}>
+      {person.tags.map((tag, index) => (
+        <Text key={index} style={styles.tagItem}>
+          {tag}
+        </Text>
+      ))}
+    </View>
+
+    <View style={styles.descriptionRow}>
+      <Text style={styles.descriptionText}>{person.description}</Text>
+      <TouchableOpacity style={styles.applyButton}>
+        <Text style={styles.applyButtonText}>Apply</Text>
+      </TouchableOpacity>
+    </View>
+  </View>
+);
+
+const Search = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.searchContainer}>
@@ -130,20 +130,17 @@ const Search = () => {
         />
         <TouchableOpacity>
           <Image
-            source={{
-              uri: 'https://img.icons8.com/ios-filled/50/search--v1.png',
-            }}
+            source={require('../assets/search.png')}
             style={styles.searchIcon}
           />
         </TouchableOpacity>
       </View>
 
       <FlatList
+        contentContainerStyle={styles.scrollContent}
         data={dummyData}
         keyExtractor={item => item.id}
         renderItem={({ item }) => <Card person={item} />}
-        contentContainerStyle={styles.scrollContent}
-        showsVerticalScrollIndicator={false}
       />
     </SafeAreaView>
   );
@@ -157,8 +154,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   scrollContent: {
-    padding: 16,
-    paddingBottom: '23%',
+    padding: 15,
+    paddingBottom: '22%',
   },
   searchContainer: {
     flexDirection: 'row',
@@ -167,7 +164,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     paddingHorizontal: 12,
     paddingVertical: 8,
-    margin: '8%',
+    margin: '5%',
   },
   searchInput: {
     flex: 1,

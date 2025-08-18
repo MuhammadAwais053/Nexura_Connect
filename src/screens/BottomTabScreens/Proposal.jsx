@@ -3,7 +3,6 @@ import {
   Text,
   TouchableOpacity,
   View,
-  Pressable,
   FlatList,
 } from 'react-native';
 import React, { useState } from 'react';
@@ -81,50 +80,35 @@ const proposals = [
   },
 ];
 
+const statusColors = {
+  Pending: '#D9D9D9',
+  Accepted: '#1CC4A0',
+  Declined: '#b33f3f',
+};
+
 const Proposal = () => {
-  const [selectedTab, setselectedTab] = useState('All');
-  const [isPressed, setIsPressed] = useState(false);
+  const [selectedTab, setSelectedTab] = useState('All');
 
-  const getStatusColor = (status, isPressed) => {
-    if (isPressed) {
-      return '#fff';
-    } else if (status === 'Pending') {
-      return '#D9D9D9';
-    } else if (status === 'Accepted') {
-      return '#1CC4A0';
-    } else {
-      return '#C41C1C';
-    }
-  };
-
-  const renderProposal = ({ item }) => {
-    return (
-      <Pressable
-        style={styles.card}
-        onPressIn={() => setIsPressed(true)}
-        onPressOut={() => setIsPressed(false)}
-      >
-        <View style={styles.cardRow}>
-          <View style={styles.cardLeft}>
-            <View style={{ marginLeft: 10 }}>
-              <Text style={styles.title}>{item.title}</Text>
-              <Text style={styles.company}>{item.company}</Text>
-              <Text style={styles.date}>{item.date}</Text>
-            </View>
-          </View>
-          <View style={styles.statusContainer}>
-            <View
-              style={[
-                styles.statusDot,
-                { backgroundColor: getStatusColor(item.status, isPressed) },
-              ]}
-            />
-            <Text style={styles.statusText}>{item.status}</Text>
-          </View>
+  const renderProposal = ({ item }) => (
+    <View style={styles.card}>
+      <View style={styles.cardRow}>
+        <View>
+          <Text style={styles.title}>{item.title}</Text>
+          <Text style={styles.company}>{item.company}</Text>
+          <Text style={styles.date}>{item.date}</Text>
         </View>
-      </Pressable>
-    );
-  };
+        <View style={styles.statusContainer}>
+          <View
+            style={[
+              styles.statusDot,
+              { backgroundColor: statusColors[item.status] || '#D9D9D9' },
+            ]}
+          />
+          <Text style={styles.statusText}>{item.status}</Text>
+        </View>
+      </View>
+    </View>
+  );
 
   const filteredProposals =
     selectedTab === 'All'
@@ -135,83 +119,34 @@ const Proposal = () => {
     <View style={styles.container}>
       <Text style={styles.heading}>My Proposals</Text>
       <Text style={styles.subheading}>Track your application status</Text>
-
       <View style={styles.tabs}>
-        <TouchableOpacity
-          style={[
-            styles.tabButton,
-            selectedTab === 'All' && styles.activeTabButton,
-          ]}
-          onPress={() => setselectedTab('All')}
-        >
-          <Text
+        {['All', 'Pending', 'Accepted', 'Declined'].map(tab => (
+          <TouchableOpacity
+            key={tab}
             style={[
-              styles.tabText,
-              selectedTab === 'All' && styles.activeTabText,
+              styles.tabButton,
+              selectedTab === tab && styles.activeTabButton,
             ]}
+            onPress={() => setSelectedTab(tab)}
           >
-            All
-          </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={[
-            styles.tabButton,
-            selectedTab === 'Pending' && styles.activeTabButton,
-          ]}
-          onPress={() => setselectedTab('Pending')}
-        >
-          <Text
-            style={[
-              styles.tabText,
-              selectedTab === 'Pending' && styles.activeTabText,
-            ]}
-          >
-            Pending
-          </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={[
-            styles.tabButton,
-            selectedTab === 'Accepted' && styles.activeTabButton,
-          ]}
-          onPress={() => setselectedTab('Accepted')}
-        >
-          <Text
-            style={[
-              styles.tabText,
-              selectedTab === 'Accepted' && styles.activeTabText,
-            ]}
-          >
-            Accepted
-          </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={[
-            styles.tabButton,
-            selectedTab === 'Declined' && styles.activeTabButton,
-          ]}
-          onPress={() => setselectedTab('Declined')}
-        >
-          <Text
-            style={[
-              styles.tabText,
-              selectedTab === 'Declined' && styles.activeTabText,
-            ]}
-          >
-            Declined
-          </Text>
-        </TouchableOpacity>
+            <Text
+              style={[
+                styles.tabText,
+                selectedTab === tab && styles.activeTabText,
+              ]}
+            >
+              {tab}
+            </Text>
+          </TouchableOpacity>
+        ))}
       </View>
-
       <FlatList
         data={filteredProposals}
         keyExtractor={item => item.id}
         renderItem={renderProposal}
-        contentContainerStyle={{ paddingBottom: '27%' }}
-        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{
+          paddingBottom: '23%',
+        }}
       />
     </View>
   );
@@ -224,7 +159,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#111827',
     flex: 1,
     padding: 16,
-  
   },
   heading: {
     fontSize: 28,
@@ -234,7 +168,7 @@ const styles = StyleSheet.create({
   subheading: {
     color: '#94A3B8',
     marginBottom: 10,
-    fontSize: 18.5,
+    fontSize: 18,
   },
   tabs: {
     flexDirection: 'row',
@@ -258,19 +192,14 @@ const styles = StyleSheet.create({
   },
   card: {
     backgroundColor: '#1B2B3C',
-    borderRadius: 15,
-    padding: '6%',
+    borderRadius: 12,
+    padding: 12,
     marginBottom: 10,
   },
   cardRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-  },
-  cardLeft: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    flex: 1,
   },
   title: {
     color: '#fff',
@@ -279,8 +208,8 @@ const styles = StyleSheet.create({
   },
   company: {
     color: '#94A3B8',
-    fontSize: 13,
-    marginBottom: 4,
+    fontSize: 14,
+    marginBottom: 2,
   },
   date: {
     color: '#94A3B8',
@@ -289,15 +218,11 @@ const styles = StyleSheet.create({
   statusContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: 10,
-    paddingVertical: 4,
-    bottom: 17,
-    right: '1%',
   },
   statusDot: {
-    width: 9,
-    height: 9,
-    borderRadius: 4,
+    width: 11,
+    height: 11,
+    borderRadius: 10,
     marginRight: 6,
   },
   statusText: {
