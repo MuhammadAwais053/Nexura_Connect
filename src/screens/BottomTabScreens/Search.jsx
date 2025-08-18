@@ -8,7 +8,8 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
 
 const dummyData = [
   {
@@ -93,33 +94,68 @@ const dummyData = [
   },
 ];
 
-const Card = ({ person }) => (
-  <View style={styles.cardContainer}>
-    <View style={styles.topRow}>
-      <Text style={styles.jobTitle}>{person.title}</Text>
-      <Text style={styles.priceText}>{person.price}</Text>
-    </View>
-
-    <Text style={styles.companyName}>{person.company}</Text>
-
-    <View style={styles.tagsRow}>
-      {person.tags.map((tag, index) => (
-        <Text key={index} style={styles.tagItem}>
-          {tag}
-        </Text>
-      ))}
-    </View>
-
-    <View style={styles.descriptionRow}>
-      <Text style={styles.descriptionText}>{person.description}</Text>
-      <TouchableOpacity style={styles.applyButton}>
-        <Text style={styles.applyButtonText}>Apply</Text>
-      </TouchableOpacity>
-    </View>
-  </View>
-);
+const jobTitleToScreenMap = {
+  'Backend Developer': 'BackendDeveloper',
+  'UI/UX Designer': 'UIUX',
+  'Digital Marketer': 'DigitalMarketer',
+  'Video Editor': 'VideoEditor',
+  'Graphic Designer': 'GraphicDesigner',
+  'Data Analyst': 'DataAnalyst',
+  'Content Writer': 'ContentWriter',
+  'Mobile App Developer': 'MobileAppDeveloper',
+  'Frontend Developer': 'FrontendDeveloper',
+  'Social Media Manager': 'SocialMedia',
+};
 
 const Search = () => {
+  const navigation = useNavigation();
+  const [searchText, setSearchText] = useState('');
+  const [filteredData, setFilteredData] = useState(dummyData);
+
+  const Card = ({ person }) => (
+    <View style={styles.cardContainer}>
+      <View style={styles.topRow}>
+        <Text style={styles.jobTitle}>{person.title}</Text>
+        <Text style={styles.priceText}>{person.price}</Text>
+      </View>
+
+      <Text style={styles.companyName}>{person.company}</Text>
+
+      <View style={styles.tagsRow}>
+        {person.tags.map((tag, index) => (
+          <Text key={index} style={styles.tagItem}>
+            {tag}
+          </Text>
+        ))}
+      </View>
+
+      <View style={styles.descriptionRow}>
+        <Text style={styles.descriptionText}>{person.description}</Text>
+        <TouchableOpacity
+          style={styles.applyButton}
+          onPress={() => {
+            const screenName = jobTitleToScreenMap[person.title];
+            navigation.navigate(screenName)
+          }}
+        >
+          <Text style={styles.applyButtonText}>Apply</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+
+  const handleSearch = input => {
+    setSearchText(input);
+    if (input === '') {
+      setFilteredData(dummyData);
+    } else {
+      const result = dummyData.filter(job =>
+        job.title.toLowerCase().includes(input.toLowerCase())
+      );
+      setFilteredData(result);
+    }
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.searchContainer}>
@@ -127,6 +163,8 @@ const Search = () => {
           placeholder="Search jobs..."
           placeholderTextColor="#94A3B8"
           style={styles.searchInput}
+          value={searchText}
+          onChangeText={handleSearch}
         />
         <TouchableOpacity>
           <Image
@@ -138,7 +176,7 @@ const Search = () => {
 
       <FlatList
         contentContainerStyle={styles.scrollContent}
-        data={dummyData}
+        data={filteredData}
         keyExtractor={item => item.id}
         renderItem={({ item }) => <Card person={item} />}
       />

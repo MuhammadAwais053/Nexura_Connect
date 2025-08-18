@@ -15,6 +15,17 @@ import Profile from './src/screens/BottomTabScreens/Profile';
 import Proposal from './src/screens/BottomTabScreens/Proposal';
 import Search from './src/screens/BottomTabScreens/Search';
 
+import BackendDetails from './src/screens/StackScreens/BackendDetails';
+import ContentWriter from './src/screens/StackScreens/ContentWriter';
+import DataAnalyst from './src/screens/StackScreens/DataAnalyst';
+import DigitalMarketer from './src/screens/StackScreens/DigitalMarketer';
+import FrontendDeveloper from './src/screens/StackScreens/FrontendDeveloper';
+import GraphicDesigner from './src/screens/StackScreens/GraphicDesigner';
+import MobileAppDeveloper from './src/screens/StackScreens/MobileAppDeveloper';
+import SocialMediaDeatils from './src/screens/StackScreens/SocialMediaDeatils';
+import UIUXDeatils from './src/screens/StackScreens/UIUXDeatils';
+import VideEditorDetails from './src/screens/StackScreens/VideEditorDetails';
+
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -28,14 +39,13 @@ const TabNavigator = () => {
         tabBarStyle: {
           position: 'absolute',
           margin: '2%',
-          height: "7.3%",
-          width: "96%",
+          height: '7.3%',
+          width: '96%',
           borderRadius: 19,
           bottom: '3.5%',
           backgroundColor: '#1E293B',
         },
-        headerShown: false
-
+        headerShown: false,
       }}
     >
       <Tab.Screen
@@ -104,12 +114,25 @@ const TabNavigator = () => {
 
 const StackNavigator = () => {
   return (
-    <Stack.Navigator initialRouteName="start" screenOptions={{ headerShown: false }}>
+    <Stack.Navigator
+      initialRouteName="start"
+      screenOptions={{ headerShown: false }}
+    >
       <Stack.Screen name="start" component={Start} />
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="Signup" component={Signup} />
       <Stack.Screen name="Welcome" component={Welcome} />
       <Stack.Screen name="Main" component={TabNavigator} />
+      <Stack.Screen name="BackendDeveloper" component={BackendDetails} />
+      <Stack.Screen name="UIUX" component={UIUXDeatils} />
+      <Stack.Screen name="DigitalMarketer" component={DigitalMarketer} />
+      <Stack.Screen name="VideoEditor" component={VideEditorDetails} />
+      <Stack.Screen name="GraphicDesigner" component={GraphicDesigner} />
+      <Stack.Screen name="DataAnalyst" component={DataAnalyst} />
+      <Stack.Screen name="ContentWriter" component={ContentWriter} />
+      <Stack.Screen name="MobileAppDeveloper" component={MobileAppDeveloper} />
+      <Stack.Screen name="FrontendDeveloper" component={FrontendDeveloper} />
+      <Stack.Screen name="SocialMedia" component={SocialMediaDeatils} />
     </Stack.Navigator>
   );
 };
