@@ -67,34 +67,34 @@ const messages = [
   },
   {
     id: '10',
-    name: 'Must',
+    name: 'Snappy Dev',
     description: "Thanks, I'll get back to you.",
     time: '2w ago',
     photo: require('../assets/Must.jpg'),
   },
 ];
 
-const Messages = () => {
-  const renderItem = ({ item }) => (
-    <View style={styles.card}>
-      <Image source={item.photo} style={styles.avatar} />
-      <View style={styles.cardContent}>
-        <View style={styles.cardHeader}>
-          <Text style={styles.name}>{item.name}</Text>
-          <Text style={styles.time}>{item.time}</Text>
-        </View>
-        <Text style={styles.description}>{item.description}</Text>
+const renderItem = ({ item }) => (
+  <View style={styles.card}>
+    <Image source={item.photo} style={styles.avatar} />
+    <View style={styles.cardContent}>
+      <View style={styles.cardHeader}>
+        <Text style={styles.name}>{item.name}</Text>
+        <Text style={styles.time}>{item.time}</Text>
       </View>
+      <Text style={styles.description}>{item.description}</Text>
     </View>
-  );
+  </View>
+);
 
+const Messages = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.heading}>Messages</Text>
       <Text style={styles.subheading}>Communicate with others</Text>
       <FlatList
         data={messages}
-        keyExtractor={(item) => item.id}
+        keyExtractor={item => item.id}
         renderItem={renderItem}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingBottom: '23%' }}
