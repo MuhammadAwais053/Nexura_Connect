@@ -131,7 +131,6 @@ const HomeScreen = () => {
           }
           renderItem={({ item }) => <Card person={item} />}
           contentContainerStyle={styles.scrollContent}
-          showsVerticalScrollIndicator={false}
         />
       </SafeAreaView>
     </View>

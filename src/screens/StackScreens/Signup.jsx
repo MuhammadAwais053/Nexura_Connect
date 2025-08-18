@@ -6,7 +6,7 @@ import {
   Text,
   TextInput,
   View,
-  Image, // 👈 import Image
+  Image,
 } from 'react-native';
 import React, { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
@@ -47,7 +47,6 @@ const Signup = () => {
       <Text style={styles.textStyle}>Create Account</Text>
       <Text style={styles.subtitle}>Signup to join Us</Text>
 
-      {/* Name */}
       <Text style={styles.textInput}>Name</Text>
       <View style={styles.inputWithIcon}>
         <Image source={require('../assets/user.png')} style={styles.icon} />
@@ -153,7 +152,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 25,
     height: 60,
-    width: 250,
+    width: 280,
     marginTop: 10,
     paddingHorizontal: 15,
     backgroundColor: '#1E293B',

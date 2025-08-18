@@ -28,14 +28,12 @@ const TabNavigator = () => {
         tabBarStyle: {
           position: 'absolute',
           margin: '2%',
-          height: "7%",
+          height: "7.3%",
           width: "96%",
-          borderRadius: 15,
+          borderRadius: 19,
           bottom: '3.5%',
           backgroundColor: '#1E293B',
         },
-        headerStyle: { backgroundColor: '#1E293B' },
-        headerTintColor: '#fff',
         headerShown: false
 
       }}

@@ -19,6 +19,16 @@ const Login = () => {
 
   return (
     <View style={styles.container}>
+      <Image
+        style={{
+          width: 120,
+          height: 120,
+          borderWidth: 2,
+          borderColor: '#1CC4A0',
+          borderRadius: 90,
+        }}
+        source={require('../assets/logo.jpg')}
+      />
       <Text style={styles.textStyle}>Welcome </Text>
       <Text style={styles.subtitle}>Log in to continue</Text>
 
@@ -107,7 +117,6 @@ const styles = StyleSheet.create({
     fontWeight: '300',
     alignSelf: 'flex-start',
     marginLeft: 50,
-    marginTop: 20,
   },
 
   passwordLabel: {
@@ -126,7 +135,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 25,
     height: 60,
-    width: 250,
+    width: 280,
     marginTop: 10,
     paddingHorizontal: 15,
     backgroundColor: '#1E293B',
