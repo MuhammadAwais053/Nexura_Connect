@@ -25,6 +25,7 @@ import MobileAppDeveloper from './src/screens/StackScreens/MobileAppDeveloper';
 import SocialMediaDeatils from './src/screens/StackScreens/SocialMediaDeatils';
 import UIUXDeatils from './src/screens/StackScreens/UIUXDeatils';
 import VideEditorDetails from './src/screens/StackScreens/VideEditorDetails';
+import Success from './src/screens/StackScreens/Success'
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -133,6 +134,7 @@ const StackNavigator = () => {
       <Stack.Screen name="MobileAppDeveloper" component={MobileAppDeveloper} />
       <Stack.Screen name="FrontendDeveloper" component={FrontendDeveloper} />
       <Stack.Screen name="SocialMedia" component={SocialMediaDeatils} />
+      <Stack.Screen name='Success' component={Success} />
     </Stack.Navigator>
   );
 };

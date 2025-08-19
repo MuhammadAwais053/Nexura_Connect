@@ -1,8 +1,10 @@
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import React from 'react';
-import { useRoute } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 
 const ContentWriter = () => {
+  const navigation = useNavigation();
+
   const route = useRoute();
   const { job } = route.params;
 
@@ -16,7 +18,12 @@ const ContentWriter = () => {
       <Text style={styles.description}>{job.description}</Text>
       <Text style={styles.sectionTitle}>Budget</Text>
       <Text style={styles.budget}>{job.price}</Text>
-      <TouchableOpacity style={styles.applyButton}>
+      <TouchableOpacity
+        style={styles.applyButton}
+        onPress={() => {
+          navigation.navigate('Success');
+        }}
+      >
         <Text style={styles.applyButtonText}>Apply Now</Text>
       </TouchableOpacity>
     </View>
