@@ -4,7 +4,7 @@ import React from 'react';
 const Profile = () => {
   return (
     <View style={styles.container}>
-      <Image style={styles.image} source={require('../assets/arnold.jpg')} />
+      <Image style={styles.image} source={require('../assets/Hafthor.webp')} />
       <Text style={styles.text}>Profile</Text>
     </View>
   );
@@ -25,7 +25,10 @@ const styles = StyleSheet.create({
     fontWeight: 'heavy',
   },
   image: {
-    width: 150,
-    height: 150,
+    width: 200,
+    height: 200,
+    borderRadius: 100,
+    borderWidth: 2,
+    borderColor: '#1CC4A0',
   },
 });

@@ -1,14 +1,20 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-
+import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { useRoute } from '@react-navigation/native';
 const BackendDetails = () => {
+  const route = useRoute();
+  const { job } = route.params;
   return (
     <View>
-      <Text>BackendDetails</Text>
+      <Text>Applying For: {job.title}</Text>
+      <Text>Company: {job.company}</Text>
+      <Text>Skills Required: {job.tags.join(', ')}</Text>
+      <Text>More Information: {job.description}</Text>
+      <Text>Budget: {job.price}</Text>
     </View>
-  )
-}
+  );
+};
 
-export default BackendDetails
+export default BackendDetails;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});

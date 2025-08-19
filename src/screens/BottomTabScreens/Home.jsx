@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import {
   StyleSheet,
@@ -9,6 +10,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 const HomeScreen = () => {
+  const navigation = useNavigation();
   const dummyData = [
     {
       id: '1',
@@ -91,6 +93,18 @@ const HomeScreen = () => {
       description: 'Analyze datasets to extract meaningful insights',
     },
   ];
+  const jobTitleToScreenMap = {
+    'Backend Developer': 'BackendDeveloper',
+    'UI/UX Designer': 'UIUX',
+    'Digital Marketer': 'DigitalMarketer',
+    'Video Editor': 'VideoEditor',
+    'Graphic Designer': 'GraphicDesigner',
+    'Data Analyst': 'DataAnalyst',
+    'Content Writer': 'ContentWriter',
+    'Mobile App Developer': 'MobileAppDeveloper',
+    'Frontend Developer': 'FrontendDeveloper',
+    'Social Media Manager': 'SocialMedia',
+  };
 
   const Card = ({ person }) => (
     <View style={styles.cardContainer}>
@@ -111,7 +125,22 @@ const HomeScreen = () => {
 
       <View style={styles.descriptionRow}>
         <Text style={styles.descriptionText}>{person.description}</Text>
-        <TouchableOpacity style={styles.applyButton}>
+        <TouchableOpacity
+          style={styles.applyButton}
+          onPress={() => {
+            const screenName = jobTitleToScreenMap[person.title];
+            navigation.navigate(screenName, {
+              job: {
+                id: person.id,
+                title: person.title,
+                company: person.company,
+                price: person.price,
+                tags: person.tags,
+                description: person.description,
+              },
+            });
+          }}
+        >
           <Text style={styles.applyButtonText}>Apply</Text>
         </TouchableOpacity>
       </View>
@@ -123,7 +152,7 @@ const HomeScreen = () => {
       <SafeAreaView>
         <FlatList
           data={dummyData}
-          keyExtractor={(item) => item.id}
+          keyExtractor={item => item.id}
           ListHeaderComponent={
             <View style={styles.headerContainer}>
               <Text style={styles.text}>Welcome to Nexura Connect</Text>

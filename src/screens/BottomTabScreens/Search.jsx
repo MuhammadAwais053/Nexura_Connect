@@ -135,7 +135,16 @@ const Search = () => {
           style={styles.applyButton}
           onPress={() => {
             const screenName = jobTitleToScreenMap[person.title];
-            navigation.navigate(screenName)
+            navigation.navigate(screenName, {
+              job: {
+                id: person.id,
+                title: person.title,
+                company: person.company,
+                price: person.price,
+                tags: person.tags,
+                description: person.description,
+              },
+            });
           }}
         >
           <Text style={styles.applyButtonText}>Apply</Text>
@@ -150,7 +159,7 @@ const Search = () => {
       setFilteredData(dummyData);
     } else {
       const result = dummyData.filter(job =>
-        job.title.toLowerCase().includes(input.toLowerCase())
+        job.title.toLowerCase().includes(input.toLowerCase()),
       );
       setFilteredData(result);
     }
