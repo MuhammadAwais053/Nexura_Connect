@@ -4,7 +4,7 @@ import React from 'react';
 const Profile = () => {
   return (
     <View style={styles.container}>
-      <Image style={styles.image} source={require('../assets/Hafthor.webp')} />
+      <Image style={styles.image} source={require('../assets/Andrey.jpg')} />
       <Text style={styles.text}>Profile</Text>
     </View>
   );
