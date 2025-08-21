@@ -6,6 +6,7 @@ import {
   FlatList,
 } from 'react-native';
 import React, { useState } from 'react';
+import rfSpacing from '../../Theme/rfSpacing';
 
 const proposals = [
   {
@@ -158,33 +159,33 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#111827',
     flex: 1,
-    padding: 16,
+    padding: rfSpacing['16x'],
   },
   heading: {
-    fontSize: 28,
+    fontSize: rfSpacing['28x'],
     fontWeight: 'bold',
     color: '#fff',
   },
   subheading: {
     color: '#94A3B8',
-    marginBottom: 10,
-    fontSize: 18,
+    marginBottom: rfSpacing['10x'],
+    fontSize: rfSpacing['18x'],
   },
   tabs: {
     flexDirection: 'row',
-    marginBottom: 16,
+    marginBottom: rfSpacing['16x'],
   },
   tabButton: {
-    paddingVertical: 8,
-    paddingHorizontal: 15,
-    borderBottomWidth: 1.5,
+    paddingVertical: rfSpacing['8x'],
+    paddingHorizontal: rfSpacing['15x'],
+    borderBottomWidth: rfSpacing['2x'],
   },
   activeTabButton: {
     borderBottomColor: '#1CC4A0',
   },
   tabText: {
     color: '#94A3B8',
-    fontSize: 14,
+    fontSize: rfSpacing['14x'],
   },
   activeTabText: {
     color: '#fff',
@@ -192,9 +193,9 @@ const styles = StyleSheet.create({
   },
   card: {
     backgroundColor: '#1B2B3C',
-    borderRadius: 12,
-    padding: 12,
-    marginBottom: 10,
+    borderRadius: rfSpacing['12x'],
+    padding: rfSpacing['12x'],
+    marginBottom: rfSpacing['10x'],
   },
   cardRow: {
     flexDirection: 'row',
@@ -203,30 +204,30 @@ const styles = StyleSheet.create({
   },
   title: {
     color: '#fff',
-    fontSize: 18,
-    marginBottom: 2,
+    fontSize: rfSpacing['18x'],
+    marginBottom: rfSpacing['2x'],
   },
   company: {
     color: '#94A3B8',
-    fontSize: 14,
-    marginBottom: 2,
+    fontSize: rfSpacing['14x'],
+    marginBottom: rfSpacing['2x'],
   },
   date: {
     color: '#94A3B8',
-    fontSize: 12,
+    fontSize: rfSpacing['12x'],
   },
   statusContainer: {
     flexDirection: 'row',
     alignItems: 'center',
   },
   statusDot: {
-    width: 11,
-    height: 11,
-    borderRadius: 10,
-    marginRight: 6,
+    width: rfSpacing['11x'],
+    height: rfSpacing['11x'],
+    borderRadius: rfSpacing['10x'],
+    marginRight: rfSpacing['6x'],
   },
   statusText: {
     color: '#fff',
-    fontSize: 14,
+    fontSize: rfSpacing['14x'],
   },
 });

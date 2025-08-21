@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import React, { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
+import rfSpacing from '../../Theme/rfSpacing';
 
 const dummyData = [
   {
@@ -201,70 +202,70 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   scrollContent: {
-    padding: 15,
+    padding: rfSpacing['15x'],
     paddingBottom: '22%',
   },
   searchContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: '#1E293B',
-    borderRadius: 12,
-    paddingHorizontal: 12,
+    borderRadius: rfSpacing['12x'],
+    paddingHorizontal: rfSpacing['12x'],
     paddingVertical: 8,
     margin: '5%',
   },
   searchInput: {
     flex: 1,
-    fontSize: 16,
+    fontSize: rfSpacing['16x'],
     color: '#fff',
   },
   searchIcon: {
-    width: 24,
-    height: 24,
+    width: rfSpacing['24x'],
+    height: rfSpacing['24x'],
     tintColor: '#1CC4A0',
-    marginLeft: 8,
+    marginLeft: rfSpacing['8x'],
   },
   cardContainer: {
-    borderRadius: 15,
+    borderRadius: rfSpacing['15x'],
     backgroundColor: '#1E293B',
-    padding: 15,
-    marginBottom: 15,
+    padding: rfSpacing['15x'],
+    marginBottom: rfSpacing['15x'],
   },
   topRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 8,
+    marginBottom: rfSpacing['8x'],
   },
   jobTitle: {
-    fontSize: 18,
+    fontSize: rfSpacing['18x'],
     fontWeight: 'bold',
     color: '#FFFFFF',
   },
   priceText: {
-    fontSize: 16,
+    fontSize: rfSpacing['16x'],
     fontWeight: '800',
     color: '#ffffff',
   },
   companyName: {
-    fontSize: 16,
+    fontSize: rfSpacing['16x'],
     color: '#1CC4A0',
-    marginBottom: 8,
+    marginBottom: rfSpacing['8x'],
   },
   tagsRow: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    marginBottom: 8,
+    marginBottom: rfSpacing['8x'],
   },
   tagItem: {
     backgroundColor: '#0F172A',
     color: '#E2E8F0',
-    paddingVertical: 4,
-    paddingHorizontal: 8,
-    borderRadius: 12,
-    fontSize: 12,
-    marginRight: 6,
-    marginBottom: 6,
+    paddingVertical: rfSpacing['4x'],
+    paddingHorizontal: rfSpacing['8x'],
+    borderRadius: rfSpacing['12x'],
+    fontSize: rfSpacing['12x'],
+    marginRight: rfSpacing['6x'],
+    marginBottom: rfSpacing['6x'],
   },
   descriptionRow: {
     flexDirection: 'row',
@@ -274,20 +275,20 @@ const styles = StyleSheet.create({
   },
   descriptionText: {
     flex: 1,
-    fontSize: 13,
+    fontSize: rfSpacing['13x'],
     color: '#94A3B8',
-    marginBottom: 12,
+    marginBottom: rfSpacing['12x'],
   },
   applyButton: {
     backgroundColor: '#1CC4A0',
-    paddingVertical: 10,
-    paddingHorizontal: 16,
-    borderRadius: 15,
+    paddingVertical: rfSpacing['10x'],
+    paddingHorizontal: rfSpacing['16x'],
+    borderRadius: rfSpacing['15x'],
     alignItems: 'center',
   },
   applyButtonText: {
     color: '#FFFFFF',
-    fontSize: 14,
+    fontSize: rfSpacing['14x'],
     fontWeight: 'bold',
   },
 });

@@ -1,5 +1,6 @@
 import { Image, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
+import rfSpacing from '../../Theme/rfSpacing';
 
 const Profile = () => {
   return (
@@ -21,14 +22,14 @@ const styles = StyleSheet.create({
   },
   text: {
     color: 'white',
-    fontSize: 35,
+    fontSize: rfSpacing['35x'],
     fontWeight: 'heavy',
   },
   image: {
-    width: 200,
-    height: 200,
-    borderRadius: 100,
-    borderWidth: 2,
+    width: rfSpacing['200x'],
+    height: rfSpacing['200x'],
+    borderRadius: rfSpacing['100x'],
+    borderWidth: rfSpacing['2x'],
     borderColor: '#1CC4A0',
   },
 });

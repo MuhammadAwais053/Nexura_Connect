@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import React, { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
+import rfSpacing from '../../Theme/rfSpacing';
 
 const Signup = () => {
   const navigation = useNavigation();
@@ -121,82 +122,82 @@ const styles = StyleSheet.create({
     backgroundColor: '#0F172A',
   },
   textStyle: {
-    fontSize: 35,
+    fontSize: rfSpacing['35x'],
     color: 'white',
     fontWeight: 'bold',
   },
   subtitle: {
     color: '#94A3B8',
-    fontSize: 20,
+    fontSize: rfSpacing['20x'],
   },
   textInput: {
-    fontSize: 19,
+    fontSize: rfSpacing['19x'],
     color: 'white',
     fontWeight: '300',
     alignSelf: 'flex-start',
-    marginLeft: 50,
-    marginTop: 20,
+    marginLeft: rfSpacing['50x'],
+    marginTop: rfSpacing['20x'],
   },
   passwordLabel: {
-    fontSize: 19,
+    fontSize: rfSpacing['19x'],
     color: 'white',
     fontWeight: '300',
     alignSelf: 'flex-start',
-    marginLeft: 50,
-    marginTop: 20,
+    marginLeft: rfSpacing['50x'],
+    marginTop: rfSpacing['20x'],
   },
   inputWithIcon: {
     flexDirection: 'row',
     alignItems: 'center',
     borderColor: '#94A3B8',
-    borderWidth: 1,
-    borderRadius: 25,
-    height: 60,
-    width: 280,
-    marginTop: 10,
-    paddingHorizontal: 15,
+    borderWidth: rfSpacing['1x'],
+    borderRadius: rfSpacing['25x'],
+    height: rfSpacing['60x'],
+    width: rfSpacing['280x'],
+    marginTop: rfSpacing['10x'],
+    paddingHorizontal: rfSpacing['15x'],
     backgroundColor: '#1E293B',
   },
   inputText: {
     flex: 1,
     color: '#94A3B8',
-    fontSize: 16,
-    marginLeft: 10,
+    fontSize: rfSpacing['16x'],
+    marginLeft: rfSpacing['10x'],
   },
   icon: {
-    width: 20,
-    height: 20,
+    width: rfSpacing['20x'],
+    height: rfSpacing['20x'],
     tintColor: '#94A3B8',
   },
   pressableButton: {
     backgroundColor: '#1CC4A0',
-    borderRadius: 20,
-    width: 279,
-    height: 54,
+    borderRadius: rfSpacing['20x'],
+    width: rfSpacing['280x'],
+    height: rfSpacing['54x'],
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 20,
+    marginTop: rfSpacing['20x'],
   },
   signupText: {
     color: 'white',
-    fontSize: 20,
+    fontSize: rfSpacing['20x'],
     fontWeight: 'bold',
   },
   opacityButton: {
-    marginTop: 30,
+    marginTop: rfSpacing['30x'],
   },
   text: {
     color: '#94A3B8',
-    fontSize: 19,
+    fontSize: rfSpacing['19x'],
   },
   lightTextwithfont: {
     color: '#94A3B8',
-    fontSize: 12,
+    fontSize: rfSpacing['12x'],
     textAlign: 'center',
   },
   textWrapper: {
-    maxWidth: 280,
+    maxWidth: rfSpacing['280x'],
     alignSelf: 'center',
-    marginTop: 10,
+    marginTop: rfSpacing['10x'],
   },
 });

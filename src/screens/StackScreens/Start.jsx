@@ -1,6 +1,7 @@
 import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
+import rfSpacing from '../../Theme/rfSpacing';
 
 const StartScreen = () => {
   const navigation = useNavigation();
@@ -11,13 +12,12 @@ const StartScreen = () => {
         <Image style={styles.image} source={require('../assets/logo.jpg')} />
         <Text style={styles.titleText}>NEXURA CONNECT</Text>
         <Text style={styles.lightText}>Matching skills, building networks</Text>
-
-        
       </View>
 
       <View style={styles.textWrapper}>
         <Text style={styles.lightTextwithfont}>
-          By proceeding, you agree to our Terms and Conditions and Privacy Policy.
+          By proceeding, you agree to our Terms and Conditions and Privacy
+          Policy.
         </Text>
         <Pressable
           onPress={() => {
@@ -25,7 +25,7 @@ const StartScreen = () => {
           }}
           style={styles.pressableButton}
         >
-            <Text style={styles.buttonText}>Get Started</Text>
+          <Text style={styles.buttonText}>Get Started</Text>
         </Pressable>
       </View>
     </View>
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#0F172A',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingVertical: 40,
+    paddingVertical: rfSpacing['40x'],
   },
 
   mainContent: {
@@ -49,52 +49,50 @@ const styles = StyleSheet.create({
 
   titleText: {
     color: 'white',
-    fontSize: 32,
+    fontSize: rfSpacing['32x'],
     fontWeight: 'bold',
-    marginTop: 20,
+    marginTop: rfSpacing['20x'],
   },
 
   buttonText: {
     color: 'white',
-    fontSize: 20,
+    fontSize: rfSpacing['20x'],
     fontWeight: 'bold',
   },
 
   lightText: {
     color: '#94A3B8',
-    fontSize: 16,
-    marginTop: 10,
+    fontSize: rfSpacing['16x'],
+    marginTop: rfSpacing['10x'],
   },
 
   lightTextwithfont: {
     color: '#94A3B8',
-    fontSize: 13,
-    padding: 20,
+    fontSize: rfSpacing['13x'],
+    padding: rfSpacing['20x'],
     textAlign: 'center',
-    
   },
 
   image: {
     borderColor: '#1CC4A0',
-    borderWidth: 1,
-    borderRadius: 85,
-    width: 215,
-    height: 215,
+    borderWidth: rfSpacing['1x'],
+    borderRadius: rfSpacing['85x'],
+    width: rfSpacing['215x'],
+    height: rfSpacing['215x'],
     marginTop: '30%',
   },
 
   pressableButton: {
     backgroundColor: '#1CC4A0',
-    borderRadius: 20,
-    width: 279,
-    height: 54,
+    borderRadius: rfSpacing['20x'],
+    width: rfSpacing['280x'],
+    height: rfSpacing['54x'],
     alignItems: 'center',
     justifyContent: 'center',
-
   },
 
   textWrapper: {
-    maxWidth: 280,
+    maxWidth: rfSpacing['280x'],
     alignSelf: 'center',
   },
 });

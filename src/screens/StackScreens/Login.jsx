@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import React, { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
+import rfSpacing from '../../Theme/rfSpacing';
 
 const Login = () => {
   const navigation = useNavigation();
@@ -21,11 +22,11 @@ const Login = () => {
     <View style={styles.container}>
       <Image
         style={{
-          width: 120,
-          height: 120,
-          borderWidth: 2,
+          width: rfSpacing['120x'],
+          height: rfSpacing['120x'],
+          borderWidth: rfSpacing['2x'],
           borderColor: '#1CC4A0',
-          borderRadius: 90,
+          borderRadius: rfSpacing['90x'],
         }}
         source={require('../assets/logo.jpg')}
       />
@@ -62,7 +63,12 @@ const Login = () => {
         onPress={() => Alert.alert('Hey!', 'This is TouchableOpacity button')}
       >
         <Text
-          style={{ color: '#94A3B8', fontSize: 15, left: '14.5%', bottom: 20 }}
+          style={{
+            color: '#94A3B8',
+            fontSize: rfSpacing['15x'],
+            left: '14.5%',
+            bottom: rfSpacing['20x'],
+          }}
         >
           Forgot password
         </Text>
@@ -100,7 +106,7 @@ const styles = StyleSheet.create({
   },
 
   textStyle: {
-    fontSize: 35,
+    fontSize: rfSpacing['35x'],
     color: 'white',
     fontWeight: 'bold',
   },
@@ -108,73 +114,73 @@ const styles = StyleSheet.create({
   subtitle: {
     color: '#94A3B8',
     marginBottom: '17%',
-    fontSize: 20,
+    fontSize: rfSpacing['20x'],
   },
 
   textInput: {
-    fontSize: 19,
+    fontSize: rfSpacing['19x'],
     color: 'white',
     fontWeight: '300',
     alignSelf: 'flex-start',
-    marginLeft: 50,
+    marginLeft: rfSpacing['50x'],
   },
 
   passwordLabel: {
-    fontSize: 19,
+    fontSize: rfSpacing['19x'],
     color: 'white',
     fontWeight: '300',
     alignSelf: 'flex-start',
-    marginLeft: 50,
-    marginTop: 20,
+    marginLeft: rfSpacing['50x'],
+    marginTop: rfSpacing['20x'],
   },
 
   inputWithIcon: {
     flexDirection: 'row',
     alignItems: 'center',
     borderColor: '#94A3B8',
-    borderWidth: 1,
-    borderRadius: 25,
-    height: 60,
-    width: 280,
-    marginTop: 10,
-    paddingHorizontal: 15,
+    borderWidth: rfSpacing['2x'],
+    borderRadius: rfSpacing['25x'],
+    height: rfSpacing['60x'],
+    width: rfSpacing['280x'],
+    marginTop: rfSpacing['10x'],
+    paddingHorizontal: rfSpacing['15x'],
     backgroundColor: '#1E293B',
   },
 
   inputText: {
     flex: 1,
     color: '#94A3B8',
-    fontSize: 16,
-    marginLeft: 10,
+    fontSize: rfSpacing['16x'],
+    marginLeft: rfSpacing['10x'],
   },
 
   icon: {
-    width: 20,
-    height: 20,
+    width: rfSpacing['20x'],
+    height: rfSpacing['20x'],
     tintColor: '#94A3B8',
   },
 
   pressableButton: {
     backgroundColor: '#1CC4A0',
-    borderRadius: 20,
-    width: 279,
-    height: 54,
+    borderRadius: rfSpacing['20x'],
+    width: rfSpacing['280x'],
+    height: rfSpacing['54x'],
     alignItems: 'center',
     justifyContent: 'center',
   },
 
   loginText: {
     color: 'white',
-    fontSize: 20,
+    fontSize: rfSpacing['20x'],
     fontWeight: 'bold',
   },
 
   opacityButton: {
-    marginTop: 30,
+    marginTop: rfSpacing['30x'],
   },
 
   text: {
     color: '#94A3B8',
-    fontSize: 19,
+    fontSize: rfSpacing['19x'],
   },
 });

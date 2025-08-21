@@ -1,6 +1,7 @@
 import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
+import rfSpacing from '../../Theme/rfSpacing';
 
 const WelcomeScreen = () => {
   const navigation = useNavigation();
@@ -38,43 +39,44 @@ const styles = StyleSheet.create({
   },
   pressableButton: {
     backgroundColor: '#1CC4A0',
-    borderRadius: 20,
-    width: 279,
-    height: 54,
+    borderRadius: rfSpacing['20x'],
+    width: rfSpacing['280x'],
+    height: rfSpacing['54x'],
     alignItems: 'center',
     justifyContent: 'center',
-    top: 30,
+    top: rfSpacing['30x'],
   },
 
   textStyle: {
-    fontSize: 35,
+    fontSize: rfSpacing['35x'],
+
     color: 'white',
     fontWeight: 'bold',
     textAlign: 'center',
   },
   lightTextwithfont: {
     color: '#94A3B8',
-    fontSize: 17,
+    fontSize: rfSpacing['17x'],
     textAlign: 'center',
   },
   image: {
-    width: 281,
-    height: 281,
+    width: rfSpacing['280x'],
+    height: rfSpacing['280x'],
     borderColor: 'red',
   },
 
   subtitle: {
     color: '#94A3B8',
-    fontSize: 20,
+    fontSize: rfSpacing['20x'],
   },
   textWrapper: {
-    maxWidth: 280,
+    maxWidth: rfSpacing['280x'],
     alignSelf: 'center',
-    marginTop: 10,
+    marginTop: rfSpacing['10x'],
   },
   buttonText: {
     color: 'white',
-    fontSize: 20,
+    fontSize: rfSpacing['20x'],
     fontWeight: 'bold',
   },
 });

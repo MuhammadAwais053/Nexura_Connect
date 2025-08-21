@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import React from 'react';
 import { useNavigation, useRoute } from '@react-navigation/native';
+import rfSpacing from '../../Theme/rfSpacing';
 
 const GraphicDesigner = () => {
   const navigation = useNavigation();
@@ -34,54 +35,54 @@ export default GraphicDesigner;
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20,
+    padding: rfSpacing['20x'],
     backgroundColor: '#111827',
     flexGrow: 1,
   },
   heading: {
-    fontSize: 24,
+    fontSize: rfSpacing['24x'],
     fontWeight: 'bold',
-    marginBottom: 6,
+    marginBottom: rfSpacing['6x'],
     color: '#FFFFFF',
   },
   company: {
-    fontSize: 18,
+    fontSize: rfSpacing['18x'],
     color: '#1CC4A0',
-    marginBottom: 20,
+    marginBottom: rfSpacing['20x'],
   },
   sectionTitle: {
-    fontSize: 16,
+    fontSize: rfSpacing['16x'],
     fontWeight: '600',
-    marginTop: 15,
-    marginBottom: 8,
+    marginTop: rfSpacing['15x'],
+    marginBottom: rfSpacing['8x'],
     color: '#E2E8F0',
   },
   tagText: {
-    fontSize: 13,
+    fontSize: rfSpacing['13x'],
     color: '#E2E8F0',
   },
   description: {
-    fontSize: 15,
-    lineHeight: 22,
+    fontSize: rfSpacing['15x'],
+    lineHeight: rfSpacing['22x'],
     color: '#94A3B8',
-    marginBottom: 16,
+    marginBottom: rfSpacing['16x'],
   },
   budget: {
-    fontSize: 18,
+    fontSize: rfSpacing['18x'],
     fontWeight: 'bold',
     color: '#22C55E',
-    marginBottom: 25,
+    marginBottom: rfSpacing['25x'],
   },
   applyButton: {
     backgroundColor: '#1CC4A0',
-    paddingVertical: 14,
-    borderRadius: 15,
+    paddingVertical: rfSpacing['14x'],
+    borderRadius: rfSpacing['15x'],
     alignItems: 'center',
-    marginTop: 20,
+    marginTop: rfSpacing['20x'],
   },
   applyButtonText: {
     color: '#FFFFFF',
-    fontSize: 16,
+    fontSize: rfSpacing['16x'],
     fontWeight: 'bold',
   },
 });

@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View, FlatList, Image } from 'react-native';
 import React from 'react';
+import rfSpacing from '../../Theme/rfSpacing';
 
 const messages = [
   {
@@ -109,31 +110,31 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#111827',
     flex: 1,
-    padding: 16,
+    padding: rfSpacing['16x'],
   },
   heading: {
-    fontSize: 28,
+    fontSize: rfSpacing['28x'],
     fontWeight: 'bold',
     color: '#fff',
   },
   subheading: {
     color: '#94A3B8',
-    marginBottom: 16,
-    fontSize: 16,
+    marginBottom: rfSpacing['16x'],
+    fontSize: rfSpacing['16x'],
   },
   card: {
     flexDirection: 'row',
     backgroundColor: '#1E293B',
-    borderRadius: 12,
-    padding: 12,
-    marginBottom: 12,
+    borderRadius: rfSpacing['12x'],
+    padding: rfSpacing['12x'],
+    marginBottom: rfSpacing['12x'],
     alignItems: 'center',
   },
   avatar: {
-    width: 48,
-    height: 48,
-    borderRadius: 24,
-    marginRight: 12,
+    width: rfSpacing['48x'],
+    height: rfSpacing['48x'],
+    borderRadius: rfSpacing['24x'],
+    marginRight: rfSpacing['12x'],
   },
   cardContent: {
     flex: 1,
@@ -143,17 +144,17 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   name: {
-    fontSize: 16,
+    fontSize: rfSpacing['16x'],
     fontWeight: '600',
     color: '#fff',
   },
   time: {
-    fontSize: 12,
+    fontSize: rfSpacing['12x'],
     color: '#94A3B8',
   },
   description: {
-    fontSize: 14,
+    fontSize: rfSpacing['14x'],
     color: '#94A3B8',
-    marginTop: 2,
+    marginTop: rfSpacing['2x'],
   },
 });

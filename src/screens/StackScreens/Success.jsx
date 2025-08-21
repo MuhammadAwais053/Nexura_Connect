@@ -1,6 +1,7 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
+import rfSpacing from '../../Theme/rfSpacing';
 
 const Applied = () => {
   const navigation = useNavigation();
@@ -42,21 +43,21 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   text: {
-    fontSize: 30,
+    fontSize: rfSpacing['30x'],
     fontWeight: '500',
     color: 'white',
   },
   image: {
-    width: 300,
-    height: 300,
-    borderRadius: 30,
+    width: rfSpacing['300x'],
+    height: rfSpacing['300x'],
+    borderRadius: rfSpacing['30x'],
     top: '1%',
   },
   text1: {
-    fontSize: 22,
+    fontSize: rfSpacing['22x'],
     color: '#e9ecef',
     textAlign: 'center',
-    paddingHorizontal: 30,
+    paddingHorizontal: rfSpacing['30x'],
     top: '2%',
   },
 });
