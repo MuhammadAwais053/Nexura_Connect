@@ -2,6 +2,7 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import rfSpacing from '../../Theme/rfSpacing';
+import color from '../../Theme/color';
 
 const Applied = () => {
   const navigation = useNavigation();
@@ -38,7 +39,7 @@ export default Applied;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#111827',
+    backgroundColor: color.NC_TabMainColor,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -55,7 +56,7 @@ const styles = StyleSheet.create({
   },
   text1: {
     fontSize: rfSpacing['22x'],
-    color: '#e9ecef',
+    color: color.NC_TextB,
     textAlign: 'center',
     paddingHorizontal: rfSpacing['30x'],
     top: '2%',

@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 import React, { useState } from 'react';
 import rfSpacing from '../../Theme/rfSpacing';
+import color from '../../Theme/color';
 
 const proposals = [
   {
@@ -157,17 +158,17 @@ export default Proposal;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#111827',
+    backgroundColor: color.NC_TabMainColor,
     flex: 1,
     padding: rfSpacing['16x'],
   },
   heading: {
     fontSize: rfSpacing['28x'],
     fontWeight: 'bold',
-    color: '#fff',
+    color: color.NC_White,
   },
   subheading: {
-    color: '#94A3B8',
+    color: color.NC_LightText,
     marginBottom: rfSpacing['10x'],
     fontSize: rfSpacing['18x'],
   },
@@ -181,14 +182,14 @@ const styles = StyleSheet.create({
     borderBottomWidth: rfSpacing['2x'],
   },
   activeTabButton: {
-    borderBottomColor: '#1CC4A0',
+    borderBottomColor: color.NC_Button,
   },
   tabText: {
-    color: '#94A3B8',
+    color: color.NC_LightText,
     fontSize: rfSpacing['14x'],
   },
   activeTabText: {
-    color: '#fff',
+    color: color.NC_White,
     fontWeight: 'bold',
   },
   card: {
@@ -203,17 +204,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   title: {
-    color: '#fff',
+    color: color.NC_White,
     fontSize: rfSpacing['18x'],
     marginBottom: rfSpacing['2x'],
   },
   company: {
-    color: '#94A3B8',
+    color: color.NC_LightText,
     fontSize: rfSpacing['14x'],
     marginBottom: rfSpacing['2x'],
   },
   date: {
-    color: '#94A3B8',
+    color: color.NC_LightText,
     fontSize: rfSpacing['12x'],
   },
   statusContainer: {
@@ -227,7 +228,7 @@ const styles = StyleSheet.create({
     marginRight: rfSpacing['6x'],
   },
   statusText: {
-    color: '#fff',
+    color: color.NC_White,
     fontSize: rfSpacing['14x'],
   },
 });

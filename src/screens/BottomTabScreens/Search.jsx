@@ -11,6 +11,7 @@ import {
 import React, { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import rfSpacing from '../../Theme/rfSpacing';
+import color from '../../Theme/color';
 
 const dummyData = [
   {
@@ -198,7 +199,7 @@ export default Search;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#111827',
+    backgroundColor: color.NC_TabMainColor,
     flex: 1,
   },
   scrollContent: {
@@ -208,7 +209,7 @@ const styles = StyleSheet.create({
   searchContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#1E293B',
+    backgroundColor: color.NC_InputBack,
     borderRadius: rfSpacing['12x'],
     paddingHorizontal: rfSpacing['12x'],
     paddingVertical: 8,
@@ -217,17 +218,17 @@ const styles = StyleSheet.create({
   searchInput: {
     flex: 1,
     fontSize: rfSpacing['16x'],
-    color: '#fff',
+    color: color.NC_White,
   },
   searchIcon: {
     width: rfSpacing['24x'],
     height: rfSpacing['24x'],
-    tintColor: '#1CC4A0',
+    tintColor: color.NC_Button,
     marginLeft: rfSpacing['8x'],
   },
   cardContainer: {
     borderRadius: rfSpacing['15x'],
-    backgroundColor: '#1E293B',
+    backgroundColor: color.NC_InputBack,
     padding: rfSpacing['15x'],
     marginBottom: rfSpacing['15x'],
   },
@@ -240,16 +241,16 @@ const styles = StyleSheet.create({
   jobTitle: {
     fontSize: rfSpacing['18x'],
     fontWeight: 'bold',
-    color: '#FFFFFF',
+    color: color.NC_White,
   },
   priceText: {
     fontSize: rfSpacing['16x'],
     fontWeight: '800',
-    color: '#ffffff',
+    color: color.NC_White,
   },
   companyName: {
     fontSize: rfSpacing['16x'],
-    color: '#1CC4A0',
+    color: color.NC_Button,
     marginBottom: rfSpacing['8x'],
   },
   tagsRow: {
@@ -258,8 +259,8 @@ const styles = StyleSheet.create({
     marginBottom: rfSpacing['8x'],
   },
   tagItem: {
-    backgroundColor: '#0F172A',
-    color: '#E2E8F0',
+    backgroundColor: color.NC_MainColor,
+    color: color.NC_Item,
     paddingVertical: rfSpacing['4x'],
     paddingHorizontal: rfSpacing['8x'],
     borderRadius: rfSpacing['12x'],
@@ -276,18 +277,18 @@ const styles = StyleSheet.create({
   descriptionText: {
     flex: 1,
     fontSize: rfSpacing['13x'],
-    color: '#94A3B8',
+    color: color.NC_LightText,
     marginBottom: rfSpacing['12x'],
   },
   applyButton: {
-    backgroundColor: '#1CC4A0',
+    backgroundColor: color.NC_Button,
     paddingVertical: rfSpacing['10x'],
     paddingHorizontal: rfSpacing['16x'],
     borderRadius: rfSpacing['15x'],
     alignItems: 'center',
   },
   applyButtonText: {
-    color: '#FFFFFF',
+    color: color.NC_White,
     fontSize: rfSpacing['14x'],
     fontWeight: 'bold',
   },

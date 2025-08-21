@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import React from 'react';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import rfSpacing from '../../Theme/rfSpacing';
+import color from '../../Theme/color';
 
 const MobileAppDeveloper = () => {
   const navigation = useNavigation();
@@ -36,18 +37,18 @@ export default MobileAppDeveloper;
 const styles = StyleSheet.create({
   container: {
     padding: rfSpacing['20x'],
-    backgroundColor: '#111827',
+    backgroundColor: color.NC_TabMainColor,
     flexGrow: 1,
   },
   heading: {
     fontSize: rfSpacing['24x'],
     fontWeight: 'bold',
     marginBottom: rfSpacing['6x'],
-    color: '#FFFFFF',
+    color: color.NC_White,
   },
   company: {
     fontSize: rfSpacing['18x'],
-    color: '#1CC4A0',
+    color: color.NC_Button,
     marginBottom: rfSpacing['20x'],
   },
   sectionTitle: {
@@ -55,33 +56,33 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     marginTop: rfSpacing['15x'],
     marginBottom: rfSpacing['8x'],
-    color: '#E2E8F0',
+    color: color.NC_Item,
   },
   tagText: {
     fontSize: rfSpacing['13x'],
-    color: '#E2E8F0',
+    color: color.NC_Item,
   },
   description: {
     fontSize: rfSpacing['15x'],
     lineHeight: rfSpacing['22x'],
-    color: '#94A3B8',
+    color: color.NC_LightText,
     marginBottom: rfSpacing['16x'],
   },
   budget: {
     fontSize: rfSpacing['18x'],
     fontWeight: 'bold',
-    color: '#22C55E',
+    color: color.NC_BudgetColor,
     marginBottom: rfSpacing['25x'],
   },
   applyButton: {
-    backgroundColor: '#1CC4A0',
+    backgroundColor: color.NC_Button,
     paddingVertical: rfSpacing['14x'],
     borderRadius: rfSpacing['15x'],
     alignItems: 'center',
     marginTop: rfSpacing['20x'],
   },
   applyButtonText: {
-    color: '#FFFFFF',
+    color: color.NC_White,
     fontSize: rfSpacing['16x'],
     fontWeight: 'bold',
   },

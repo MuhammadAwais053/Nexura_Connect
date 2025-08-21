@@ -2,6 +2,7 @@ import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import rfSpacing from '../../Theme/rfSpacing';
+import color from '../../Theme/color';
 
 const StartScreen = () => {
   const navigation = useNavigation();
@@ -37,7 +38,7 @@ export default StartScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0F172A',
+    backgroundColor: color.NC_MainColor,
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingVertical: rfSpacing['40x'],
@@ -61,20 +62,20 @@ const styles = StyleSheet.create({
   },
 
   lightText: {
-    color: '#94A3B8',
+    color: color.NC_LightText,
     fontSize: rfSpacing['16x'],
     marginTop: rfSpacing['10x'],
   },
 
   lightTextwithfont: {
-    color: '#94A3B8',
+    color: color.NC_LightText,
     fontSize: rfSpacing['13x'],
     padding: rfSpacing['20x'],
     textAlign: 'center',
   },
 
   image: {
-    borderColor: '#1CC4A0',
+    borderColor: color.NC_Button,
     borderWidth: rfSpacing['1x'],
     borderRadius: rfSpacing['85x'],
     width: rfSpacing['215x'],
@@ -83,7 +84,7 @@ const styles = StyleSheet.create({
   },
 
   pressableButton: {
-    backgroundColor: '#1CC4A0',
+    backgroundColor: color.NC_Button,
     borderRadius: rfSpacing['20x'],
     width: rfSpacing['280x'],
     height: rfSpacing['54x'],

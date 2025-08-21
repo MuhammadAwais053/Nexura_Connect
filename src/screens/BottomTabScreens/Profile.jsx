@@ -1,6 +1,7 @@
 import { Image, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import rfSpacing from '../../Theme/rfSpacing';
+import color from '../../Theme/color';
 
 const Profile = () => {
   return (
@@ -15,7 +16,7 @@ export default Profile;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#111827',
+    backgroundColor: color.NC_TabMainColor,
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
@@ -30,6 +31,6 @@ const styles = StyleSheet.create({
     height: rfSpacing['200x'],
     borderRadius: rfSpacing['100x'],
     borderWidth: rfSpacing['2x'],
-    borderColor: '#1CC4A0',
+    borderColor: color.NC_Button,
   },
 });

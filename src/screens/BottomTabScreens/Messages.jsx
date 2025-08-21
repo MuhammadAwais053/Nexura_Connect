@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, FlatList, Image } from 'react-native';
 import React from 'react';
 import rfSpacing from '../../Theme/rfSpacing';
+import color from '../../Theme/color';
 
 const messages = [
   {
@@ -108,23 +109,23 @@ export default Messages;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#111827',
+    backgroundColor: color.NC_TabMainColor,
     flex: 1,
     padding: rfSpacing['16x'],
   },
   heading: {
     fontSize: rfSpacing['28x'],
     fontWeight: 'bold',
-    color: '#fff',
+    color: color.NC_White,
   },
   subheading: {
-    color: '#94A3B8',
+    color: color.NC_LightText,
     marginBottom: rfSpacing['16x'],
     fontSize: rfSpacing['16x'],
   },
   card: {
     flexDirection: 'row',
-    backgroundColor: '#1E293B',
+    backgroundColor: color.NC_InputBack,
     borderRadius: rfSpacing['12x'],
     padding: rfSpacing['12x'],
     marginBottom: rfSpacing['12x'],
@@ -146,15 +147,15 @@ const styles = StyleSheet.create({
   name: {
     fontSize: rfSpacing['16x'],
     fontWeight: '600',
-    color: '#fff',
+    color: color.NC_White,
   },
   time: {
     fontSize: rfSpacing['12x'],
-    color: '#94A3B8',
+    color: color.NC_LightText,
   },
   description: {
     fontSize: rfSpacing['14x'],
-    color: '#94A3B8',
+    color: color.NC_LightText,
     marginTop: rfSpacing['2x'],
   },
 });

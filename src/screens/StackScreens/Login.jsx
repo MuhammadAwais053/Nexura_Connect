@@ -12,6 +12,7 @@ import {
 import React, { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import rfSpacing from '../../Theme/rfSpacing';
+import color from '../../Theme/color';
 
 const Login = () => {
   const navigation = useNavigation();
@@ -102,7 +103,7 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     justifyContent: 'center',
     flex: 1,
-    backgroundColor: '#0F172A',
+    backgroundColor: color.NC_MainColor,
   },
 
   textStyle: {
@@ -112,7 +113,7 @@ const styles = StyleSheet.create({
   },
 
   subtitle: {
-    color: '#94A3B8',
+    color: color.NC_LightText,
     marginBottom: '17%',
     fontSize: rfSpacing['20x'],
   },
@@ -137,19 +138,19 @@ const styles = StyleSheet.create({
   inputWithIcon: {
     flexDirection: 'row',
     alignItems: 'center',
-    borderColor: '#94A3B8',
+    borderColor: color.NC_LightText,
     borderWidth: rfSpacing['2x'],
     borderRadius: rfSpacing['25x'],
     height: rfSpacing['60x'],
     width: rfSpacing['280x'],
     marginTop: rfSpacing['10x'],
     paddingHorizontal: rfSpacing['15x'],
-    backgroundColor: '#1E293B',
+    backgroundColor: color.NC_InputBack,
   },
 
   inputText: {
     flex: 1,
-    color: '#94A3B8',
+    color: color.NC_LightText,
     fontSize: rfSpacing['16x'],
     marginLeft: rfSpacing['10x'],
   },
@@ -157,11 +158,11 @@ const styles = StyleSheet.create({
   icon: {
     width: rfSpacing['20x'],
     height: rfSpacing['20x'],
-    tintColor: '#94A3B8',
+    tintColor: color.NC_LightText,
   },
 
   pressableButton: {
-    backgroundColor: '#1CC4A0',
+    backgroundColor: color.NC_Button,
     borderRadius: rfSpacing['20x'],
     width: rfSpacing['280x'],
     height: rfSpacing['54x'],
@@ -180,7 +181,7 @@ const styles = StyleSheet.create({
   },
 
   text: {
-    color: '#94A3B8',
+    color: color.NC_LightText,
     fontSize: rfSpacing['19x'],
   },
 });

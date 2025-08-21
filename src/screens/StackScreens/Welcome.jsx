@@ -2,6 +2,7 @@ import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import rfSpacing from '../../Theme/rfSpacing';
+import color from '../../Theme/color';
 
 const WelcomeScreen = () => {
   const navigation = useNavigation();
@@ -35,10 +36,10 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     justifyContent: 'center',
     flex: 1,
-    backgroundColor: '#0F172A',
+    backgroundColor: color.NC_MainColor,
   },
   pressableButton: {
-    backgroundColor: '#1CC4A0',
+    backgroundColor: color.NC_Button,
     borderRadius: rfSpacing['20x'],
     width: rfSpacing['280x'],
     height: rfSpacing['54x'],
@@ -55,7 +56,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   lightTextwithfont: {
-    color: '#94A3B8',
+    color: color.NC_LightText,
     fontSize: rfSpacing['17x'],
     textAlign: 'center',
   },
@@ -66,7 +67,7 @@ const styles = StyleSheet.create({
   },
 
   subtitle: {
-    color: '#94A3B8',
+    color: color.NC_LightText,
     fontSize: rfSpacing['20x'],
   },
   textWrapper: {

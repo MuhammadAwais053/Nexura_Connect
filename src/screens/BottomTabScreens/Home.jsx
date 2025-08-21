@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import rfSpacing from '../../Theme/rfSpacing';
+import color from '../../Theme/color';
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -171,7 +172,7 @@ export default HomeScreen;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#111827',
+    backgroundColor: color.NC_TabMainColor,
     flex: 1,
   },
   scrollContent: {
@@ -186,12 +187,12 @@ const styles = StyleSheet.create({
   text: {
     fontSize: rfSpacing['28x'],
     fontWeight: '600',
-    color: '#fff',
+    color: color.NC_White,
     alignSelf: 'center',
   },
   cardContainer: {
     borderRadius: rfSpacing['15x'],
-    backgroundColor: '#1E293B',
+    backgroundColor: color.NC_InputBack,
     padding: rfSpacing['15x'],
     marginBottom: rfSpacing['15x'],
   },
@@ -204,16 +205,16 @@ const styles = StyleSheet.create({
   jobTitle: {
     fontSize: rfSpacing['18x'],
     fontWeight: 'bold',
-    color: '#FFFFFF',
+    color: color.NC_White,
   },
   priceText: {
     fontSize: rfSpacing['16x'],
     fontWeight: '800',
-    color: '#ffffff',
+    color: color.NC_White,
   },
   companyName: {
     fontSize: rfSpacing['16x'],
-    color: '#1CC4A0',
+    color: color.NC_Button,
     marginBottom: rfSpacing['8x'],
   },
   tagsRow: {
@@ -222,8 +223,8 @@ const styles = StyleSheet.create({
     marginBottom: rfSpacing['8x'],
   },
   tagItem: {
-    backgroundColor: '#0F172A',
-    color: '#E2E8F0',
+    backgroundColor: color.NC_MainColor,
+    color: color.NC_Item,
     paddingVertical: rfSpacing['4x'],
     paddingHorizontal: rfSpacing['8x'],
     borderRadius: rfSpacing['12x'],
@@ -240,18 +241,18 @@ const styles = StyleSheet.create({
   descriptionText: {
     flex: 1,
     fontSize: rfSpacing['13x'],
-    color: '#94A3B8',
+    color: color.NC_LightText,
     marginBottom: rfSpacing['12x'],
   },
   applyButton: {
-    backgroundColor: '#1CC4A0',
+    backgroundColor: color.NC_Button,
     paddingVertical: rfSpacing['10x'],
     paddingHorizontal: rfSpacing['16x'],
     borderRadius: rfSpacing['15x'],
     alignItems: 'center',
   },
   applyButtonText: {
-    color: '#FFFFFF',
+    color: color.NC_White,
     fontSize: rfSpacing['14x'],
     fontWeight: 'bold',
   },
